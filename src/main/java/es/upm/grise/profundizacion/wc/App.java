@@ -1,8 +1,36 @@
 package es.upm.grise.profundizacion.wc;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+
 public class App {
 
 	public static void main(String[] args) {
+		
+		// Without parameters, we print the function usage
+		if(args.length == 0) {
+			System.out.println("Usage: wc [-clw file]");
+			return; // System.exit() would be preferable, but it breaks the tests
+		}
+
+		// If more than 2 parameters are given, we stop without further information
+		if(args.length != 2) {
+			System.out.println("Wrong arguments!");
+			return;
+		}
+    	
+		// Check the commands later (see switch below)
+		// At this point, we open the text file
+		BufferedReader br = null;
+		String fileName = args[1];
+
+		try{
+			br = new BufferedReader(new FileReader(fileName));
+		} catch(Exception e) {
+			System.out.println("Cannot find file: " + fileName);
+			return;
+		}
+		
 		return;
 	}
 }
