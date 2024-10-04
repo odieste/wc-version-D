@@ -20,6 +20,14 @@ public class App {
 			return;
 		}
     	
+		// Verify that the commands start with -. It is not necessary
+		// because the first parameter is a command always, but...
+		String commands = args[0];
+		if(commands.charAt(0) != '-') {
+    			System.out.println("The commands do not start with -");
+			return;
+		}
+
 		// Check the commands later (see switch below)
 		// At this point, we open the text file
 		BufferedReader br = null;
@@ -29,14 +37,6 @@ public class App {
 			br = new BufferedReader(new FileReader(fileName));
 		} catch(Exception e) {
 			System.out.println("Cannot find file: " + fileName);
-			return;
-		}
-		
-		// Verify that the commands start with -. It is not necessary
-		// because the first parameter is a command always, but...
-		String commands = args[0];
-		if(commands.charAt(0) != '-') {
-			System.out.println("The commands do not start with -");
 			return;
 		}
 		
@@ -66,6 +66,8 @@ public class App {
 			}
 		}
 		
-		return;
+		// Print the results
+		// The counts are returned in the specified order
+		System.out.println(result + "\t" + fileName);
 	}
 }
