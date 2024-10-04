@@ -33,4 +33,16 @@ public class Counter {
 		
 	}
 	
+	public int getNumberCharacters() {
+		return numberCharacters;
+	}
+
+	public int getNumberLines() {
+		return numberLines;
+	}
+	
+	public int getNumberWords() {
+		return numberWords;
+	}
+	
 }
