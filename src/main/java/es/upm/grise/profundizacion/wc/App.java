@@ -8,7 +8,7 @@ public class App {
 	public static void main(String[] args) {
 		
 		// Without parameters, we print the function usage
-		if(args.length == 0) {
+		if(args.length == 1) {
 			System.out.println("Usage: wc [-clw file]");
 			return; // System.exit() would be preferable, but it breaks the tests
 		}
@@ -29,6 +29,14 @@ public class App {
 		} catch(Exception e) {
 			System.out.println("Cannot find file: " + fileName);
 			return;
+		}
+		
+		// Verify that the commands start with -. It is not necessary
+		// because the first parameter is a command always, but...
+		String commands = args[0];
+		if(commands.charAt(0) != '-') {
+			System.out.println("The commands do not start with -");
+    		return;
 		}
 		
 		return;
