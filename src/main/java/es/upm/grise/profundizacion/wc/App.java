@@ -51,6 +51,21 @@ public class App {
 			return;
 		}
 		
+		// Check the commands and return values. In case of wrong commands
+		// the program exits with error
+		String result = "";
+		commands = commands.substring(1);
+		for(char c : commands.toCharArray()) {
+			switch(c) {
+			case 'c': result += "\t" + Integer.toString(counter.getNumberCharacters()); break;
+			case 'l': result += "\t" + Integer.toString(counter.getNumberLines()); break;
+			case 'w': result += "\t" + Integer.toString(counter.getNumberWords()); break;
+			default:
+	    		System.out.println("Unrecognized command: " + c);
+	    		return;
+			}
+		}
+		
 		return;
 	}
 }
