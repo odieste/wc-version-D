@@ -2,6 +2,7 @@ package es.upm.grise.profundizacion.wc;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
+import java.io.IOException;
 
 public class App {
 
@@ -36,6 +37,17 @@ public class App {
 		String commands = args[0];
 		if(commands.charAt(0) != '-') {
 			System.out.println("The commands do not start with -");
+			return;
+		}
+		
+		// And count the characters, words and lines. It is easier
+		// to count everything than rewind the file several times,
+		// which is not an straightforward operation
+		Counter counter = null;
+		try {
+			counter = new Counter(br);
+		} catch (IOException e) {
+			System.out.println("Error reading file: " + fileName);
 			return;
 		}
 		
