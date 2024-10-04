@@ -36,7 +36,7 @@ public class App {
 		String commands = args[0];
 		if(commands.charAt(0) != '-') {
 			System.out.println("The commands do not start with -");
-    		return;
+			return;
 		}
 		
 		return;
