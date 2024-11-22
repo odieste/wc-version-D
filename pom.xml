@@ -4,7 +4,7 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>es.upm.grise.profundizacion</groupId>
-  <artifactId>wc</artifactId>
+  <artifactId>wc-version-D</artifactId>
   <version>0.0.1-SNAPSHOT</version>
 
   <name>wc</name>
@@ -12,6 +12,8 @@
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.release>17</maven.compiler.release>
+    <maven.compiler.source>17</maven.compiler.source>
+    <maven.compiler.target>17</maven.compiler.target>
   </properties>
 
   <dependencyManagement>
